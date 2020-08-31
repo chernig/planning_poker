@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+frontend/poker-main/node_modules
+frontend/poker-main/.pnp
+frontend/poker-main.pnp.js
+
+# testing
+frontend/poker-main/coverage
+
+# production
+frontend/poker-main/build
+
+# misc
+frontend/poker-main.DS_Store
+frontend/poker-main.env.local
+frontend/poker-main.env.development.local
+frontend/poker-main.env.test.local
+frontend/poker-main.env.production.local
+
+frontend/poker-mainnpm-debug.log*
+frontend/poker-mainyarn-debug.log*
+frontend/poker-mainyarn-error.log*
+
+
+# backend
+
+backend/db.sqlite3
