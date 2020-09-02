@@ -25,4 +25,4 @@ frontend/poker-mainyarn-error.log*
 
 # backend
 
-backend/db.sqlite3
+backend/*.sqlite3
