@@ -1,6 +1,7 @@
 import React, { useEffect, useState, MouseEvent } from 'react';
 import { ListGroup, Container, Button } from 'react-bootstrap';
 import axios from 'axios';
+import Story from '../story/story';
 
 function StoryContainer(props: object) {
   const [data, setData] = useState<any[]>([]);
@@ -10,6 +11,11 @@ function StoryContainer(props: object) {
       setData(response.data);
     });
   }, []);
+
+  const testDelete = (story: object) => {
+    const newData = data.filter((x) => x !== story);
+    console.log(newData);
+  };
 
   const handleAddStory = (event: MouseEvent) => {
     event.preventDefault();
@@ -35,9 +41,12 @@ function StoryContainer(props: object) {
   return (
     <Container>
       <ListGroup>
-        {data.map((fields) => (
-          //   replace with story component
-          <ListGroup.Item key={fields.id}>{fields.title}</ListGroup.Item>
+        {data.map((field) => (
+          <Story
+            key={field.id}
+            data={field}
+            _delete={() => testDelete(field)}
+          />
         ))}
       </ListGroup>
       <Button onClick={handleAddStory}>Add story</Button>
