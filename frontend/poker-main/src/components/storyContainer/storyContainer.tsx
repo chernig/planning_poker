@@ -17,12 +17,12 @@ function StoryContainer(props : object) {
         event.preventDefault()
         const storyData = new FormData()
         storyData.append("points", '2')
-        storyData.append("title", "new amazing storyse")
+        storyData.append("title", "tesssst")
         storyData.append("description", "some random")
         axios.post('http://127.0.0.1:8000/api/stories/create/',
             storyData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'application/json'
                 }
             }
         ).then(response => {
